@@ -1,8 +1,8 @@
-import { Configuration, OpenAIApi } from "openai";
+const { Configuration, OpenAIApi } = require("openai");
 import { APIKEY } from "../../config";
 
 const configuration = new Configuration({
-  apiKey: APIKEY,
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -11,9 +11,12 @@ export default async function (req: any, res: any) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: idea,
-      temperature: 0.6,
+      prompt: "",
+      temperature: 0.7,
       max_tokens: 256,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
     });
     res.status(200).json({ data: completion.data.choices[0].text });
   } catch (er) {
