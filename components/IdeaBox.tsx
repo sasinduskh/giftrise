@@ -7,6 +7,7 @@ const IdeaBox: FC<{ close: () => void }> = ({ close }) => {
   const [loadin, setLoading] = useState<boolean>(false);
 
   const fetchIdea = async () => {
+    // hello
     setLoading(true);
     try {
       const res = await fetch("https://giftrise.herokuapp.com/idea", {
