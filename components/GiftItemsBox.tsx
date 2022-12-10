@@ -20,7 +20,7 @@ const GiftItems: FC<{ close: () => void }> = ({ close }) => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/getgiftitems", {
+      const res = await fetch("https://giftrise.herokuapp.com/item", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,9 +37,6 @@ const GiftItems: FC<{ close: () => void }> = ({ close }) => {
 
     setLoading(false);
   };
-
-
-  
 
   return (
     <div>

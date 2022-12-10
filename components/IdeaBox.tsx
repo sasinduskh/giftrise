@@ -9,7 +9,7 @@ const IdeaBox: FC<{ close: () => void }> = ({ close }) => {
   const fetchIdea = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/getidea", {
+      const res = await fetch("https://giftrise.herokuapp.com/idea", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
