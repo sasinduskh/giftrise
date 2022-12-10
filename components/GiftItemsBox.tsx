@@ -38,6 +38,9 @@ const GiftItems: FC<{ close: () => void }> = ({ close }) => {
     setLoading(false);
   };
 
+
+  
+
   return (
     <div>
       <button className="flex items-center space-x-[10px]" onClick={close}>
